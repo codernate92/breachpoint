@@ -42,3 +42,64 @@ FROM naval_activity n
 JOIN undersea_cables c
   ON ST_DWithin(n.geom, c.geom, 10000)
 WHERE n.nation = 'Russia';
+
+---
+
+## 🌍 Visualization Demo
+
+Open the interactive threat map in your browser:
+
+```bash
+visualization/index.html
+
+Make sure to insert your Mapbox Access Token into map.js.
+
+Map Layers Rendered:
+	•	LineString: BalticConnector undersea cable
+	•	Point: Simulated Russian vessel (Akademik Pashin)
+	•	Polygon: 10km threat buffer via Turf.js
+
+📂 File Structure
+breachpoint/
+├── breachpoint_model.sql       # Full PostGIS schema + inserts
+├── threat_queries.sql          # Spatial threat detection queries
+├── visualization/
+│   ├── index.html              # Mapbox GL JS map container
+│   └── map.js                  # Buffer logic + vessel plotting
+├── README.md                   # Full project overview
+├── .gitignore                  # Common project ignores
+└── LICENSE                     # MIT License
+
+🔓 OSINT + GEOINT Fusion
+
+This project fuses:
+	•	Public vessel activity patterns
+	•	Undersea cable routing data
+	•	Spatial SQL intelligence logic
+	•	Mapbox-based threat visualization
+
+BreachPoint demonstrates how open tooling can model hybrid conflict threats and help visualize infrastructure exposure at strategic choke points.
+
+⸻
+
+💡 Future Expansions
+	•	Integrate AIS feeds for real-time vessel tracking
+	•	Overlay EEZ boundaries to flag territorial incursions
+	•	Export dynamic threat maps via GeoJSON for mission dashboards
+	•	Extend with Streamlit or FastAPI frontend
+
+⸻
+
+✅ Outcomes
+
+This project is:
+	•	🎯 Operationally relevant
+	•	💼 Interview + portfolio ready
+	•	🛠️ Reproducible and expandable
+	•	🔗 Ideal for GEOINT, CTI, OSINT, and defense tech use cases
+
+⸻
+
+🧠 TL;DR
+
+BreachPoint simulates Russian sabotage threats to undersea cables in the Baltic Sea using PostGIS, Mapbox, and spatial intelligence techniques. It models gray-zone warfare through open geospatial tooling — turning infrastructure risk into something you can see, query, and respond to.
